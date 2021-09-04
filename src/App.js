@@ -1,10 +1,13 @@
+import Users from "./component/users/Users";
+import Posts from "./component/posts/Posts";
 import {
 BrowserRouter as Router,
-Switch,
+// Switch,
 Route,
 Link,
-withRouter,
+// withRouter,
 } from "react-router-dom"
+import PostDetails from "./component/postDetails/PostDetails";
 
 function App() {
   return (
@@ -14,12 +17,12 @@ function App() {
         <br/>
         <Link to={'/users'}>Users</Link>
         <br/>
-        <Link to={'/posts'}>Posts</Link>
+        <Link to={'/posts/:id'}>Posts</Link>
         <br/>
-        <Route path={'/users'}></Route>
-        <Route path={'/posts'}></Route>
-
       </div>
+
+      <Route path={'/users'} component={Users}/>
+      <Route path={'/posts'} component={Posts}/>
     </Router>
 
   );
